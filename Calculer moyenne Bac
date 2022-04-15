@@ -1,0 +1,61 @@
+NAMES = ['Algorithmique', 'TIC', 'Tp', 'Physique chimie', 
+        'Mathématiques', 'Arabe', 'EPS', 'Anglais', 
+        'Option', 'Philosophie']
+ 
+def get_value(name):
+    while 1:
+        try:
+            val = input('Quel est votre note en %s : ' % name)
+            # ntastiw fih 3andou valeur numerique
+            return float(val)
+        except:
+            val= input>20('Quel est votre note en %s : ' % name)
+            return float(val)
+            # ki ya3tini ay 7aja akber min 20
+            pass
+ 
+def get_average(values):
+    #liste des coéfficients
+    cf = [2, 2, 2, 2, 1, 1,  1, 1, 1, 1]
+    # nesta3mlou zip() bech na3mil itération l zouz listet fard wa9t
+    # sum() heya el total de la liste des (valeur*coéfficient)
+    tot = sum([x * y for x, y in zip(values, cf)])
+    return tot / 14
+ 
+ 
+ 
+if __name__ == '__main__':
+    # L'exécution dmta3 l code bch tabda.
+    # na3mlou creation mta3 lista fer8a lel notet
+    results = []
+    for n in NAMES:
+        # lkol matiere bech y9olik a3tini 9adeh el valeur mte3ha 
+        # wbech yzid.ha lel liste b append()
+        results.append(get_value(n))
+ 
+    # bech ne7ssbou lmoyenne b get_average bel argument
+    average = get_average(results)
+    print( average)
+ 
+if 0<=average<8 :
+    print ('Refusé')
+ 
+if 8<=average<10:
+    print( 'Controle')
+    print ('commencez à révisez !')
+ 
+if 10<=average<12:
+    print ('Admis')
+ 
+if 12<=average<14:
+    print ('Admis')
+    print (' Avec menttion assez bien !')
+ 
+if 14<=average<16:
+    print (' Admis')
+    print( 'Avec mention Bien !')
+if 16<=average<=20:
+    print ('Admis')
+    print (' Avec mention très très très très très très Bien !')
+if average<0 and average>20:
+    print ('Merci de contacter l administration')
